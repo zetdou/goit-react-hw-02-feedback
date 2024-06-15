@@ -1,5 +1,6 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
+import styles from "../styles/Statistics.module.css"
 
 export default class Statistics extends Component {
     static propTypes = {
@@ -14,12 +15,12 @@ export default class Statistics extends Component {
         const { good, neutral, bad, total, positivePercentage } = this.props;
 
         return (
-            <ul>
-                <li>Good: {good}</li>
-                <li>Neutral: {neutral}</li>
-                <li>Bad: {bad}</li>
-                <li>Total: {total}</li>
-                <li>Positive feedback: {positivePercentage}%</li>
+            <ul className={styles.statisticsList}>
+                <li className={styles.statisticsListItemGood}>Good: {good}</li>
+                <li className={styles.statisticsListItemNeutral}>Neutral: {neutral}</li>
+                <li className={styles.statisticsListItemBad}>Bad: {bad}</li>
+                <li className={styles.statisticsListItemTotal}>Total: {total}</li>
+                <li className={styles.statisticsListItemPercentage}>Positive feedback: {positivePercentage}%</li>
             </ul>
         );
     }

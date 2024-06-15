@@ -1,5 +1,6 @@
 import { Component } from "react";
 import PropTypes from "prop-types";
+import styles from "../styles/FeedbackOptions.module.css";
 
 export default class FeedbackOptions extends Component {
     static propTypes = {
@@ -11,9 +12,9 @@ export default class FeedbackOptions extends Component {
         const { options, onLeaveFeedback } = this.props;
 
         return (
-            <div>
+            <div className={styles.feedbackBtnWrapper}>
                 {options.map((option) => (
-                    <button key={option} onClick={() => onLeaveFeedback(option)}>{option}</button>
+                    <button className={styles.feedbackBtn}  key={option} onClick={() => onLeaveFeedback(option)}>{option}</button>
                 ))}
             </div>
         );
